@@ -33,25 +33,27 @@ generateBtn.addEventListener("click", () => {
 
 function generatePassword(lower, upper, number, symbol, length) {
   let generatedPassword = ''
-
   const typesCount = lower + upper + number + symbol;
-  console.log('typesCount: ', typesCount);
 
-  const typeArr = [{lower}, {upper}, {number}, {symbol}].filter
-  (item=> Object.values(item)[0]);
+//  const typeArr = [{lower}, {upper}, {number}, {symbol}].filter
+//  (item=> Object.values(item)[0]);
 
-  console.log('typeArr', typeArr);
-
-  if(typesCount === 0) {
-    return '';
+  if(length < 8 || length > 128) {
+    alert("Password length must be between 8 and 128.")
+    return ""
   }
 
-  for(let i = 0; i > length; i += typesCount) {
-    typeArr.forEach(type => {
-      let funcName = Object.keys(type)[0];
+  for(let i = 0; i < length; i += typesCount) {
+    if(lower) { generatedPassword += getRandomLower();}
+    if(upper) { generatedPassword += getRandomUpper();}
+    if(number) { generatedPassword += getRandomNumber();}
+    if(symbol) { generatedPassword += getRandomSymbol();}
 
-      generatedPassword += randomFunc[funcName]();
-    });
+//    typeArr.forEach(type => {
+//     let funcName = Object.keys(type)[0];
+//      console.log('Func Name', funcName)
+//      generatedPassword += randomFunc[funcName]();
+//    });
   }
   const finalPassword = generatedPassword.slice(0, length);
   console.log(finalPassword)
