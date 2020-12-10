@@ -25,8 +25,8 @@ generateBtn.addEventListener("click", () => {
 
   passwordText.innerText = generatePassword(
     hasLower,
-    hasNumber, 
-    hasUpper, 
+    hasUpper,
+    hasNumber,  
     hasSymbol, 
     length)
 })
@@ -42,7 +42,7 @@ function generatePassword(lower, upper, number, symbol, length) {
     alert("Password length must be between 8 and 128.")
     return ""
   }
-
+//simple form of the code below it. 
   for(let i = 0; i < length; i += typesCount) {
     if(lower) { generatedPassword += getRandomLower();}
     if(upper) { generatedPassword += getRandomUpper();}
