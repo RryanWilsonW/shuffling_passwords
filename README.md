@@ -1,4 +1,4 @@
-# shuffling_passwords #
+# Shuffling_passwords #
 This website is designed to generate a random secure password with different parameters that can be selected by the user. The interface has a text area where the user can input the amount of characters they would like as well as four checkboxes that control uppercase, number, symbol, and lowercase characters. When one is checked, it will show up in the password. At the bottom of the page there is a button used to generate the password, and append it to the text area above.
 
 # Difference in assignment #
